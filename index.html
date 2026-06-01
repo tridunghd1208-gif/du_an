@@ -3,46 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Space Invaders - Vanilla JS</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Space Invaders</title>
+  <!-- Liên kết tới file CSS để trang trí giao diện -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Khung chứa toàn bộ game, dùng để căn giữa màn hình -->
-  <main class="game-wrapper">
-    <h1 class="game-title">SPACE INVADERS</h1>
+  <h1>SPACE INVADERS</h1>
 
-    <!-- Thanh hiển thị điểm số hiện tại và điểm cao nhất -->
-    <div class="scoreboard">
-      <span>SCORE: <strong id="scoreValue">0</strong></span>
-      <span>HIGH SCORE: <strong id="highScoreValue">0</strong></span>
-    </div>
+  <!-- Dòng hiển thị điểm số hiện tại và điểm cao nhất -->
+  <div id="scoreboard">
+    <span>Điểm: <strong id="score">0</strong></span>
+    <span>Điểm cao nhất: <strong id="highScore">0</strong></span>
+  </div>
 
-    <!-- Vùng canvas + các overlay (start / game over) nằm chồng lên nhau -->
-    <div class="canvas-container">
-      <!-- Toàn bộ đồ họa game được vẽ trên canvas này -->
-      <canvas id="gameCanvas" width="640" height="640"></canvas>
+  <!-- Toàn bộ hình ảnh game sẽ được vẽ lên thẻ canvas này -->
+  <canvas id="gameCanvas" width="600" height="600"></canvas>
 
-      <!-- Overlay màn hình bắt đầu -->
-      <div class="overlay" id="startScreen">
-        <h2>SPACE INVADERS</h2>
-        <p>Dùng phím <kbd>&larr;</kbd> <kbd>&rarr;</kbd> để di chuyển</p>
-        <p>Nhấn <kbd>Space</kbd> để bắn</p>
-        <button class="btn" id="startButton">BẮT ĐẦU</button>
-      </div>
+  <!-- Hướng dẫn chơi -->
+  <p id="hint">← → để di chuyển | Space để bắn</p>
 
-      <!-- Overlay màn hình kết thúc (mặc định ẩn) -->
-      <div class="overlay hidden" id="gameOverScreen">
-        <h2>GAME OVER</h2>
-        <p>Điểm của bạn: <strong id="finalScore">0</strong></p>
-        <p>Điểm cao nhất: <strong id="finalHighScore">0</strong></p>
-        <button class="btn" id="restartButton">CHƠI LẠI</button>
-      </div>
-    </div>
-
-    <p class="hint">Mẹo: nhấn <kbd>P</kbd> để tạm dừng / tiếp tục.</p>
-  </main>
-
-  <!-- Nạp file khởi động dưới dạng ES Module để dùng được import/export -->
-  <script type="module" src="js/main.js"></script>
+  <!-- Liên kết tới file JavaScript (đặt cuối trang để HTML tải xong trước) -->
+  <script src="script.js"></script>
 </body>
 </html>

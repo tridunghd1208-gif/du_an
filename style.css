@@ -1,0 +1,55 @@
+/* ===== style.css - Trang trí giao diện game ===== */
+
+/* Bỏ lề mặc định của trình duyệt cho gọn */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Toàn trang: nền tối (vũ trụ), chữ màu sáng, căn mọi thứ vào giữa */
+body {
+  background-color: #02030a; /* màu tối như vũ trụ */
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+
+  /* Dùng flex để xếp nội dung theo cột và căn giữa màn hình */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Tiêu đề game */
+h1 {
+  color: #57f5c4;
+  letter-spacing: 4px;
+}
+
+/* Dòng điểm số: cho rộng bằng canvas và đẩy 2 đầu ra 2 bên */
+#scoreboard {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+/* Tô màu vàng cho số điểm để dễ nhìn */
+#scoreboard strong {
+  color: #ffd166;
+}
+
+/* Viền canvas rõ ràng để nổi bật trên nền tối */
+#gameCanvas {
+  background-color: #000;
+  border: 3px solid #57f5c4;
+}
+
+/* Dòng hướng dẫn nhỏ phía dưới */
+#hint {
+  color: #888;
+  font-size: 14px;
+}
