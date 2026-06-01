@@ -53,3 +53,149 @@ h1 {
   color: #888;
   font-size: 14px;
 }
+
+/* ===== Tiện ích: ẩn phần tử ===== */
+.hidden {
+  display: none;
+}
+
+/* ===== Màn hình đăng nhập / đăng ký: tiêu đề trên, form dưới ===== */
+.auth-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Tiêu đề game ở trang đăng nhập to và rõ hơn một chút */
+.auth-screen h1 {
+  font-size: 40px;
+}
+
+
+/* ===== Khu vực game: xếp dọc, căn giữa ===== */
+#gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Thanh trên cùng: tiêu đề bên trái, nút đăng xuất bên phải */
+#topBar {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nút đăng xuất nhỏ gọn, viền xanh */
+#logoutBtn {
+  background-color: transparent;
+  color: #57f5c4;
+  border: 1px solid #57f5c4;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#logoutBtn:hover {
+  background-color: #57f5c4;
+  color: #02030a;
+}
+
+/* ===== MÀN HÌNH ĐĂNG NHẬP ===== */
+/* Hộp form căn giữa, nền tối hơn một chút để nổi bật */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+  padding: 28px;
+  background-color: #0a0e1a;
+  border: 2px solid #57f5c4;
+  border-radius: 12px;
+  text-align: left;
+}
+
+/* Tiêu đề form đăng nhập */
+.login-box h2 {
+  color: #57f5c4;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Nhãn của ô nhập */
+.login-box label {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Ô nhập liệu */
+.login-box input {
+  padding: 10px;
+  border: 1px solid #334;
+  border-radius: 6px;
+  background-color: #02030a;
+  color: white;
+  font-size: 15px;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #57f5c4;
+}
+
+/* Nút đăng nhập */
+.login-box button {
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #57f5c4;
+  color: #02030a;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #3fe0ad;
+}
+
+/* Dòng báo lỗi: màu đỏ, ẩn khi rỗng */
+.login-error {
+  color: #ff5d73;
+  font-size: 14px;
+  min-height: 18px;
+  text-align: center;
+}
+
+/* Gợi ý tài khoản demo */
+.login-hint {
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Dòng chuyển đổi giữa form đăng nhập và đăng ký */
+.login-switch {
+  color: #aaa;
+  font-size: 13px;
+  text-align: center;
+}
+
+.login-switch a {
+  color: #57f5c4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-switch a:hover {
+  text-decoration: underline;
+}
+
+
+

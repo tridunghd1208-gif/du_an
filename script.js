@@ -8,9 +8,11 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-// Lấy 2 ô hiển thị điểm số trên trang
+// Lấy các ô hiển thị điểm số / đợt trên trang
 const scoreText = document.getElementById("score");
 const highScoreText = document.getElementById("highScore");
+const waveText = document.getElementById("wave");
+
 
 
 // ============================================================
@@ -120,6 +122,7 @@ class Game {
 
     this.isGameOver = false;
 
+    this.wave = 1;           // đợt quái hiện tại (tăng dần khi diệt sạch)
     this.alienDirection = 1; // 1 = đi sang phải, -1 = đi sang trái
     this.alienSpeed = 1;     // tốc độ đi ngang của quái vật
 
@@ -130,9 +133,11 @@ class Game {
     this.createAliens(); // tạo lưới quái vật
     this.setupKeyboard(); // cài đặt bắt sự kiện bàn phím
 
-    // Hiện điểm cao nhất lên màn hình ngay từ đầu
+    // Hiện điểm cao nhất và đợt lên màn hình ngay từ đầu
     highScoreText.textContent = this.highScore;
+    waveText.textContent = this.wave;
   }
+
 
   // Tạo lưới quái vật 4 hàng x 8 cột
   createAliens() {
@@ -221,9 +226,31 @@ class Game {
     // 4) Kiểm tra đạn có trúng quái vật không
     this.checkBulletHits();
 
-    // 5) Kiểm tra điều kiện thua
+    // 5) Diệt sạch quái thì sinh đợt mới (chơi liên tục)
+    if (this.aliens.length === 0) {
+      this.nextWave();
+    }
+
+    // 6) Kiểm tra điều kiện thua
     this.checkGameOver();
   }
+
+  // Sinh đợt quái mới: tăng đợt, tăng tốc độ và tạo lại lưới quái
+  nextWave() {
+    this.wave = this.wave + 1;
+    waveText.textContent = this.wave;
+
+    // Mỗi đợt quái đi nhanh hơn một chút để khó dần (giới hạn để không quá nhanh)
+    this.alienSpeed = Math.min(this.alienSpeed + 0.5, 6);
+
+    // Đặt lại hướng đi và xóa hết đạn còn lại trên màn hình
+    this.alienDirection = 1;
+    this.bullets = [];
+
+    // Tạo lưới quái mới ở vị trí trên cùng như ban đầu
+    this.createAliens();
+  }
+
 
   // Di chuyển đàn quái vật qua lại, chạm tường thì hạ xuống một bậc
   moveAliens() {
@@ -345,6 +372,13 @@ class Game {
 
 // ============================================================
 // KHỞI ĐỘNG GAME
+// ------------------------------------------------------------
+// Game KHÔNG tự chạy ngay nữa. Hàm startGame() sẽ được auth.js
+// gọi sau khi người dùng đăng nhập thành công.
 // ============================================================
-const game = new Game();
-game.loop();
+window.startGame = function () {
+  const game = new Game();
+  game.loop();
+};
+
+

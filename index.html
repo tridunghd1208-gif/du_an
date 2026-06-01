@@ -3,26 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Space Invaders</title>
-  <!-- Liên kết tới file CSS để trang trí giao diện -->
+  <title>Đăng nhập - Space Invaders</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>SPACE INVADERS</h1>
+  <!-- ===== TRANG ĐĂNG NHẬP ===== -->
+  <!-- Tiêu đề lớn tên game ở trên, form đăng nhập ở dưới. -->
+  <div id="loginScreen" class="auth-screen">
+    <h1>SPACE INVADERS</h1>
 
-  <!-- Dòng hiển thị điểm số hiện tại và điểm cao nhất -->
-  <div id="scoreboard">
-    <span>Điểm: <strong id="score">0</strong></span>
-    <span>Điểm cao nhất: <strong id="highScore">0</strong></span>
+    <form id="loginForm" class="login-box">
+      <h2>ĐĂNG NHẬP</h2>
+
+      <label for="loginUsername">Tên đăng nhập</label>
+      <input type="text" id="loginUsername" placeholder="admin" autocomplete="username" />
+
+      <label for="loginPassword">Mật khẩu</label>
+      <input type="password" id="loginPassword" placeholder="••••" autocomplete="current-password" />
+
+      <!-- Dòng báo lỗi -->
+      <p id="loginError" class="login-error"></p>
+
+      <button type="submit">Đăng nhập</button>
+
+      <p class="login-switch">
+        Chưa có tài khoản?
+        <a href="register.html">Đăng ký</a>
+      </p>
+      <p class="login-hint">Tài khoản demo: admin / 1234</p>
+    </form>
   </div>
 
-  <!-- Toàn bộ hình ảnh game sẽ được vẽ lên thẻ canvas này -->
-  <canvas id="gameCanvas" width="600" height="600"></canvas>
-
-  <!-- Hướng dẫn chơi -->
-  <p id="hint">← → để di chuyển | Space để bắn</p>
-
-  <!-- Liên kết tới file JavaScript (đặt cuối trang để HTML tải xong trước) -->
-  <script src="script.js"></script>
+  <!-- Xử lý đăng nhập -->
+  <script src="auth.js"></script>
 </body>
 </html>

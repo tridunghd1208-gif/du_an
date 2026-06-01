@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng ký - Space Invaders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== TRANG ĐĂNG KÝ ===== -->
+  <div id="registerScreen">
+    <form id="registerForm" class="login-box">
+      <h2>ĐĂNG KÝ</h2>
+
+      <label for="registerUsername">Tên đăng nhập</label>
+      <input type="text" id="registerUsername" placeholder="Tên của bạn" autocomplete="username" />
+
+      <label for="registerPassword">Mật khẩu</label>
+      <input type="password" id="registerPassword" placeholder="••••" autocomplete="new-password" />
+
+      <label for="registerConfirm">Xác nhận mật khẩu</label>
+      <input type="password" id="registerConfirm" placeholder="••••" autocomplete="new-password" />
+
+      <!-- Dòng báo lỗi / thành công -->
+      <p id="registerError" class="login-error"></p>
+
+      <button type="submit">Đăng ký</button>
+
+      <p class="login-switch">
+        Đã có tài khoản?
+        <a href="index.html">Đăng nhập</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- Xử lý đăng ký -->
+  <script src="auth.js"></script>
+</body>
+</html>

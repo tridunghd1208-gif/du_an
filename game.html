@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== TRANG CHƠI GAME ===== -->
+  <!-- Chỉ vào được sau khi đã đăng nhập (auth.js kiểm tra, chưa thì đá về index.html) -->
+  <div id="gameContainer">
+    <div id="topBar">
+      <h1>SPACE INVADERS</h1>
+      <button id="logoutBtn" type="button">Đăng xuất</button>
+    </div>
+
+    <!-- Dòng hiển thị điểm số hiện tại, đợt và điểm cao nhất -->
+    <div id="scoreboard">
+      <span>Điểm: <strong id="score">0</strong></span>
+      <span>Đợt: <strong id="wave">1</strong></span>
+      <span>Điểm cao nhất: <strong id="highScore">0</strong></span>
+    </div>
+
+    <!-- Toàn bộ hình ảnh game sẽ được vẽ lên thẻ canvas này -->
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+    <!-- Hướng dẫn chơi -->
+    <p id="hint">← → để di chuyển | Space để bắn</p>
+  </div>
+
+  <!-- auth.js kiểm tra đăng nhập rồi mới gọi startGame() trong script.js -->
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
